@@ -1,0 +1,44 @@
+server.port: 8080
+spring:
+  application.name: spring-oauth-server
+  security:
+    user:
+      name: user
+      password: password
+    oauth2:
+      client:
+        registration:
+          google:
+            provider: google
+            client-id: ${GOOGLE-ID}
+            client-secret: ${GOOGLE-SECRET}
+            scope: openid, https://www.googleapis.com/auth/userinfo.profile, https://www.googleapis.com/auth/userinfo.email
+            client-name: google-client
+          github:
+            provider: github
+            clientId: ${GITHUB-ID}
+            clientSecret: ${GITHUB-SECRET}
+            scope: user:email, read:user
+            client-name: github-client
+      authorizationserver:
+        client:
+          demo-client:
+            require-authorization-consent: true
+            registration:
+              client-id: demo
+              client-secret: "{noop}secret"
+              authorization-grant-types:
+                - client_credentials
+                - authorization_code
+                - refresh_token
+                - urn:ietf:params:oauth:grant-type:device_code
+                - urn:ietf:params:oauth:grant-type:token-exchange
+              redirect-uris:
+               - http://127.0.0.1:8082/login/oauth2/code/reg-client
+               - https://oauthdebugger.com/debug
+              scopes: openid
+              client-authentication-methods: client_secret_basic
+            token:
+              access-token-time-to-live: 30m
+              refresh-token-time-to-live: 1d
+              reuse-refresh-tokens: true
