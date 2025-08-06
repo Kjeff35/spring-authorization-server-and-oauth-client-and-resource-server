@@ -2,11 +2,11 @@
 A simple oauth authorization server, resource server and an oauth client server
 
 ## WORKFLOW
-![https://docs.spring.io/spring-authorization-server/reference/overview.html](Authorization Server)
-![https://docs.spring.io/spring-security/reference/reactive/oauth2/client/index.html](OAuth Client)
-![https://docs.spring.io/spring-security/reference/reactive/oauth2/resource-server/index.html](Resource Server)
-![AuthorizationServer.png](AuthorizationServer.png)
+[Authorization Server](https://docs.spring.io/spring-authorization-server/reference/overview.html)  
+[OAuth Client](https://docs.spring.io/spring-security/reference/reactive/oauth2/client/index.html)  
+[Resource Server](https://docs.spring.io/spring-security/reference/reactive/oauth2/resource-server/index.html)  
 
+![Authorization Server Diagram](AuthorizationServer.png)
 
 ## OAUTH SERVER
 A Spring OAuth Server (Authorization Server) is responsible for handling OAuth 2.0 authentication and authorization processes in a Spring-based application.  
